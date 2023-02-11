@@ -1,0 +1,54 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #0b1522;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heart{
+    height: 70px;
+    width: 70px;
+    background-color: #f20044;
+    position: relative;
+    box-shadow: 10px 10px 90px #f20044;
+    /* анімація об'єкту */
+    animation: aniHeart 1.5s linear infinite; 
+}
+/* робота з кадрами об'єкту */
+@keyframes aniHeart{
+    0%{
+        transform: rotate(-45deg) scale(1.07);
+    }
+    80%{
+        transform: rotate(-45deg) scale(1);
+    }
+    100%{
+        transform: rotate(-45deg) scale(0.8);
+    }
+}
+/* псевдоклас ::before*/
+.heart::before{
+    /*  */
+    content: '';
+    position: absolute;
+    top: -50%;
+    width: 70px;
+    height: 70px;
+    background-color: #f20044;
+    box-shadow: -10px 10px 90px #f20044;
+    border-radius: 50%;
+}
+/* псевдоклас ::after*/
+.heart::after{
+    /*  */
+    content: '';
+    position: absolute;
+    right: -50%;
+    background-color: #f20044;
+    width: 70px;
+    height: 70px;
+    box-shadow: 10px -10px 90px #f20044;
+    border-radius: 50%;
+}
